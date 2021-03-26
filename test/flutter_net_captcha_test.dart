@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -17,6 +16,3 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 }
-=======
-void main() {}
->>>>>>> ced78c9699c0d62c966fa84c90f49775001f556a

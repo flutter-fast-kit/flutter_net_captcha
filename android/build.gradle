@@ -36,16 +36,9 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-    }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation fileTree(include: ['*.aar'], dir: 'libs')
-    implementation files('libs/captcha-release_v3.2.0.aar')
+    implementation 'com.netease.nis:captcha:3.0.2'
 }

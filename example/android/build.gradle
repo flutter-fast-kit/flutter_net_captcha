@@ -4,7 +4,6 @@ buildscript {
         google()
         jcenter()
     }
-
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -13,6 +12,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url 'https://cdn.jsdelivr.net/gh/flutter-fast-kit/maven-repository'
+        }
         google()
         jcenter()
     }

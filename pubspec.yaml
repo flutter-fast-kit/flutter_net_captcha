@@ -1,6 +1,6 @@
 name: flutter_net_captcha
 description: Net Captcha plugin for Flutter.  
-version: 2.0.1
+version: 2.0.2
 homepage: https://github.com/flutter-fast-kit/flutter_net_captcha
 
 environment:

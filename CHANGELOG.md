@@ -1,3 +1,6 @@
+## 2.0.3
+
+* 修改iOS delegate 注册方式
 ## 2.0.2
 
 * 替换Android aar为官方依赖.

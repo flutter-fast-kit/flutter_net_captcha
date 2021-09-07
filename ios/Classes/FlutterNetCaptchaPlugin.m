@@ -44,7 +44,6 @@
 
     NSAssert(self->manager != nil, @"请先调用 configVerifyCode 配置验证码");
 
-    self->manager.delegate = self;
     self->manager.mode = [self getNTESVerifyCodeModeByString:args[@"mode"]];
     self->manager.lang = [self convertLanguage:args[@"language"]];
     [self->manager openVerifyCodeView:nil];
@@ -59,13 +58,14 @@
 
     NSDictionary *args = (NSDictionary *)arguments;
 
-    [self->manager configureVerifyCode:args[@"captchaId"] timeout:(int)args[@"timeoutInterval"]];
+    [self->manager configureVerifyCode:args[@"captchaId"] timeout:[args[@"timeoutInterval"] doubleValue]];
     self->manager.openFallBack = args[@"openFallBack"];
     self->manager.fallBackCount = [args[@"fallBackCount"] intValue];
     self->manager.ipv6 = args[@"ipv6"];
     self->manager.closeButtonHidden = args[@"closeButtonHidden"];
     self->manager.shouldCloseByTouchBackground = args[@"shouldCloseByTouchBackground"];
     [self->manager enableLog:args[@"enableLog"]];
+    self->manager.delegate = self;
 
     result([NSNumber numberWithBool:YES]);
 }
@@ -145,8 +145,6 @@
     if (self->_eventSink) {
         self->_eventSink(eventData);
     }
-
-    self->manager.delegate = nil;
 }
 
 

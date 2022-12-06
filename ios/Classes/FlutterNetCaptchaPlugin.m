@@ -163,6 +163,8 @@
     return NTESVerifyCodeLangFRA;
   }else if ([language containsString:@"ES"]) {
     return NTESVerifyCodeLangES;
+  }else if ([language containsString:@"TR"]) {
+       return NTESVerifyCodeLangTR;
   }
   return NTESVerifyCodeLangTW;
 }
